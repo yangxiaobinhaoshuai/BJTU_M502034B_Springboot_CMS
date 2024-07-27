@@ -1,4 +1,7 @@
 package org.bjtu.cms.bjtucms.service
 
-//interface TravelerService {
-//}
+import org.springframework.stereotype.Service
+
+@Service
+interface TravelerService {
+}
