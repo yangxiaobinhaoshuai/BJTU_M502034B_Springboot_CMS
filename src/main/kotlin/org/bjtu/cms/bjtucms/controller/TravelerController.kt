@@ -11,11 +11,10 @@ class TravelerController {
     @Autowired
     lateinit var travelerService: TravelerService
 
+
     @GetMapping("/traveler")
     fun hello(): String {
         val t = travelerService.getTravelerById("1")
         return "hello world traveler controller, $t"
     }
-
-
 }

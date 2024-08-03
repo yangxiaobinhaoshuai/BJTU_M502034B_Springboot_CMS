@@ -16,16 +16,26 @@
 
 - drop table travelers;
 
+#### Create Table
+
 CREATE TABLE travelers (
-id INT PRIMARY KEY,
+id INT PRIMARY KEY AUTO_INCREMENT,
 gender INT,
 birth_year INT,
 total_miles INT,
 total_times INT
 );
 
+#### Show Columns
+
+show columns from travelers;
+
+#### Insert element
 
 INSERT INTO travelers (id, gender, birth_year, total_miles, total_times)
 VALUES (1, 1, 1990, 5000, 10);
 
+#### Delete element
 
+DELETE FROM travelers
+WHERE id = 123;
