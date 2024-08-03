@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository
 @Repository
 interface TravelerRepo : JpaRepository<Traveler, Long> {
 
+    fun save(traveler: Traveler): Traveler
+
+    fun getTravelerById(id: String): Traveler?
+
     fun findByBirthYearBetween(from: Int, to: Int): List<Traveler>
 
     fun findByTotalTravelMilesBetween(from: Int, to: Int): List<Traveler>

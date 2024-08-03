@@ -8,8 +8,8 @@ object MyLogger {
     private val logger = LoggerFactory.getLogger(TAG)
 
     fun i(msg: String) = logger.info("  ----> $msg")
-    fun e(msg: String, throwable: Throwable) = logger.error(msg, throwable)
-
+    fun e(msg: String) = logger.error(msg)
+    fun e(throwable: Throwable, msg: String) = logger.error(msg, throwable)
 }
 
 

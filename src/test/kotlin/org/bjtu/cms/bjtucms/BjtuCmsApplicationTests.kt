@@ -15,7 +15,6 @@ class BjtuCmsApplicationTests {
     @Test
     fun contextLoads() {
         val traveler = Traveler()
-        val ts = travelerRepo.findBytTotalTravelTimeBetween(0, 1)
     }
 
 }
