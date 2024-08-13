@@ -10,7 +10,8 @@
 - mysql -u bjtu_root -p
 - 12345
 - show databases;
-- use db_traveler
+- CREATE DATABASE db_traveler;
+- use db_traveler;
 - show tables;
 - select * from travelers;
 

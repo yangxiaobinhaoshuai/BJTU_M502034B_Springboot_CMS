@@ -36,4 +36,20 @@ class TravelerServiceImpl : TravelerService {
     override fun getTravelerById(id: String): Traveler? {
         return repo.getTravelerById(id)
     }
+
+    override fun getAllTravelers(): List<Traveler> {
+        return repo.findAll()
+    }
+
+    override fun getTravelersByBirthYearRange(from: Int, to: Int): List<Traveler> {
+        return repo.findByBirthYearBetween(from, to)
+    }
+
+    override fun getTravelersByMileRange(from: Int, to: Int): List<Traveler> {
+        return repo.findByTotalTravelMilesBetween(from, to)
+    }
+
+    override fun getTravelersByTimeRange(from: Int, to: Int): List<Traveler> {
+        return repo.findByTotalTravelTimeBetween(from, to)
+    }
 }
