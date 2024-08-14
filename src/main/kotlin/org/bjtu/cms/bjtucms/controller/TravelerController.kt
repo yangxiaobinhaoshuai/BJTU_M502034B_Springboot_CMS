@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+data class Response(val from: Int, val to: Int, val data: List<Traveler>)
+
 @RestController
 class TravelerController {
 
@@ -24,24 +26,25 @@ class TravelerController {
      * http://localhost:8080/traveler/birth_year_range?from=1990&to=2004
      */
     @GetMapping("/traveler/birth_year_range")
-    fun getTravelersByBirthYearRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): List<Traveler> {
-        return travelerService.getTravelersByBirthYearRange(from, to)
+    fun getTravelersByBirthYearRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
+
+        return Response(from, to, travelerService.getTravelersByBirthYearRange(from, to))
     }
 
     /**
      * http://localhost:8080/traveler/mile_range?from=1284&to=14505
      */
     @GetMapping("/traveler/mile_range")
-    fun getTravelersByMileRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): List<Traveler> {
-        return travelerService.getTravelersByMileRange(from, to)
+    fun getTravelersByMileRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
+        return Response(from, to, travelerService.getTravelersByMileRange(from, to))
     }
 
     /**
-     * http://localhost:8080/traveler/mile_range?from=2&to=63
+     * http://localhost:8080/traveler/time_range?from=2&to=63
      */
     @GetMapping("/traveler/time_range")
-    fun getTravelersByTimeRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): List<Traveler> {
-        return travelerService.getTravelersByTimeRange(from, to)
+    fun getTravelersByTimeRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
+        return Response(from, to, travelerService.getTravelersByTimeRange(from, to))
     }
 
     // For Testing
