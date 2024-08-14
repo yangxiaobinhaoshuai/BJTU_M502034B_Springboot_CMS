@@ -1,6 +1,7 @@
 package org.bjtu.cms.bjtucms.controller
 
 import org.bjtu.cms.bjtucms.dao.Traveler
+import org.bjtu.cms.bjtucms.log.MyLogger
 import org.bjtu.cms.bjtucms.service.TravelerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -27,8 +28,10 @@ class TravelerController {
      */
     @GetMapping("/traveler/birth_year_range")
     fun getTravelersByBirthYearRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
-
         return Response(from, to, travelerService.getTravelersByBirthYearRange(from, to))
+            .also {
+                MyLogger.i("getTravelersByBirthYearRange,$from-$to, res: $it.")
+            }
     }
 
     /**
@@ -37,6 +40,9 @@ class TravelerController {
     @GetMapping("/traveler/mile_range")
     fun getTravelersByMileRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
         return Response(from, to, travelerService.getTravelersByMileRange(from, to))
+            .also {
+                MyLogger.i("getTravelersByMileRange,$from-$to, res: $it.")
+            }
     }
 
     /**
@@ -45,6 +51,9 @@ class TravelerController {
     @GetMapping("/traveler/time_range")
     fun getTravelersByTimeRange(@RequestParam("from") from: Int, @RequestParam("to") to: Int): Response {
         return Response(from, to, travelerService.getTravelersByTimeRange(from, to))
+            .also {
+                MyLogger.i("getTravelersByTimeRange,$from-$to, res: $it.")
+            }
     }
 
     // For Testing
