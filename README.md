@@ -1,5 +1,6 @@
 # BJTU Spring CMS
 
+see [vue front end](https://github.com/yangxiaobinhaoshuai/BJTU_M502034B_Springboot_CMS_Vue_frontend)
 - 开发平台建议使用IDEA，后台使用spring boot框架，前端使用Echarts和Layui框架开发制作一个信息统计页面；
 - 采用Spring Boot框架实现系统，采用Model作为数据容器，Reppository作为数据库交互层，Controller作为业务逻辑层，Jsp作为前端展示层；
 - 前端与后台的数据交互要求使用Ajax
