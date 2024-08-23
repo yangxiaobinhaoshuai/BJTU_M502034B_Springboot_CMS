@@ -30,6 +30,7 @@ total_times INT
 #### Show Columns
 
 show columns from travelers;
+show full columns from travelers;
 
 #### Insert element
 
